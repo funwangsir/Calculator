@@ -20,7 +20,9 @@ public class Calculator {
 
         String result = sNum[0];
         for (int i = 1; i < sNum.length; i++) {
-            //这里注意在模拟器上，split后的长度不一定就是0，symbols在split后的长度问题，还没搞懂原因
+            //这里需要注意
+            //在模拟器上，split后的长度不一定就是0
+            //字符串使用split后的数组长度问题，我暂时还没搞懂原因，后面弄懂了再补上
             result = calc(result,sNum[i],sSymbol[i-1]);
         }
         return result;

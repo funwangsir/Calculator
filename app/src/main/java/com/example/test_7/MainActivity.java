@@ -308,7 +308,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //判断规则就是“符号数组比数字数字少1”
-        if(symbols.length < nums.length)//模拟器上symbols在split后的长度问题，还没搞懂原因
+        if(symbols.length < nums.length)
+            //这里需要注意
+            //在模拟器上，split后的长度不一定就是0
+            //字符串使用split后的数组长度问题，我暂时还没搞懂原因，后面弄懂了再补上
             return true;
         return false;
     }
@@ -323,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             inputText.setTextSize((int)(inputTextSize * 0.6));
         }
         if(resultText.getText().length() > 10 ){
-            resultText.setTextSize((int)(inputTextSize * 0.6));
+            resultText.setTextSize((int)(resultTestSize * 0.6));
         }
     }
 }
