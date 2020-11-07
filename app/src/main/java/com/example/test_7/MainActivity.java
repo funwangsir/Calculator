@@ -61,6 +61,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         screenWidth = dm.widthPixels;
         screenHeigh = dm.heightPixels;
+/**
+ // 非小米全面屏需要适配下面的状态栏
+ //获取手机状态栏的高度(单位是px 分辨率)
+ int statusBarHeight = -1;
+ int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+ if (resourceId > 0) {
+ statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+ }
+ float scale = this.getResources().getDisplayMetrics().density;
+ statusBarHeight =  (int) (statusBarHeight / scale + 0.5f);//将状态栏的高度px单位转换为dp单位
+ */
+
+//设置文本输入模块的高度占手机屏幕高度的比例
+//        LinearLayout editContent = (LinearLayout)findViewById(R.id.edit_content);
+//        ViewGroup.LayoutParams lp_edit = editContent.getLayoutParams();
+//        lp_edit.height = (int)(screenHeigh * EDDIT_CONTENT);
+//        editContent.setLayoutParams(lp_edit);
 
         //设置键盘输入模块的高度占手机屏幕高度的比例
         LinearLayout inputKeyWord = (LinearLayout)findViewById(R.id.input_keyword);
